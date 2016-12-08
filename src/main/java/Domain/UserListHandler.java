@@ -1,6 +1,7 @@
 package Domain;
 
 import WebSockets.SocketManager;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;
@@ -8,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by Mitchell on 08/12/2016.
  */
-public class LeerlingHandler {
+public class UserListHandler {
     private static FactoryLeerlingen FL = new FactoryLeerlingen();
 
 
@@ -16,7 +17,7 @@ public class LeerlingHandler {
         FL.setleerling(name, ping, ip);
     }
 
-    public static void Update() {
+    static void Update() {
         FL.UpdateFile();
         JSONObject userlist = FL.getListInJSON();
         try {
@@ -24,5 +25,9 @@ public class LeerlingHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static JSONObject getList() {
+        return FL.getListInJSON();
     }
 }

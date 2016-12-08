@@ -9,14 +9,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JsonMaster {
-    static private String path = "C:\\Users\\Mitchell\\ProjectWorkspace\\Java\\TestMavenSpark\\src\\main\\java\\Presentielijst.json";
+ class JsonMaster {
     static private String userListPath = "C:\\Users\\Mitchell\\ProjectWorkspace\\Java\\TestMavenSpark\\src\\main\\java\\UserList.json";
-    public JsonMaster() {
+    JsonMaster() {
     }
 
     void updateFile(List<Leerling> users) {
@@ -30,7 +28,7 @@ public class JsonMaster {
                 obj.put("Ping", L.getPing());
                 array.add(obj);
             }
-            FileWriter file = new FileWriter(getPath());
+            FileWriter file = new FileWriter(userListPath);
             System.out.print(array.toJSONString());
             file.write(array.toJSONString());
             file.flush();
@@ -40,27 +38,7 @@ public class JsonMaster {
         }
     }
 
-
-    static Map<String, Boolean> getDataMap() throws IOException, ParseException {
-        JSONParser pars = new JSONParser();
-        JSONObject obj;
-
-        obj = (JSONObject) pars.parse(new FileReader(getPath()));
-        Map<String, Boolean> List = new HashMap<String, Boolean>();
-        for (Object s : obj.keySet()) {
-            String name = (String) s;
-            Boolean value = (Boolean) obj.get(name);
-            List.put(name, value);
-        }
-        System.out.print(obj.toJSONString());
-        return List;
-    }
-
-    private static String getPath() {
-        return path;
-    }
-
-    public JSONObject packJSON(Map<String, Boolean> RMap) {
+    JSONObject packJSON(Map<String, Boolean> RMap) {
         JSONObject job = new JSONObject();
 
         for (String i : RMap.keySet()) {
@@ -70,7 +48,7 @@ public class JsonMaster {
         return job;
     }
 
-    public static ArrayList<Leerling> readList() throws IOException, ParseException {
+    static ArrayList<Leerling> readList() throws IOException, ParseException {
         ArrayList<Leerling> returnList = new ArrayList<>();
         JSONParser pars = new JSONParser();
         JSONArray array = (JSONArray) pars.parse(new FileReader(userListPath));

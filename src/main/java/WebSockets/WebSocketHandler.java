@@ -1,5 +1,6 @@
 package WebSockets;
 
+import Domain.UserListHandler;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
@@ -19,10 +20,9 @@ public class WebSocketHandler {
     @OnWebSocketConnect
     public void onConnect(Session user) throws Exception {
         sessions.add(user);
-        SocketManager.setleerling("Mitchell van Ek");
         System.out.print("go further? ");
         user.setIdleTimeout(10000);
-        sendMessage(SocketManager.getList(), user);
+        sendMessage(UserListHandler.getList(), user);
     }
 
     private void sendMessage(JSONObject list, Session session) throws IOException {

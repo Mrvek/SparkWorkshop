@@ -18,8 +18,6 @@ public class OpdrachtSocketHandler {
     @OnWebSocketConnect
     public void onConnect(Session user) throws Exception {
         sessions.add(user);
-        SocketManager.setleerling("Mitchell van Ek");
-        System.out.print("go further? ");
         user.setIdleTimeout(10000);
     }
 

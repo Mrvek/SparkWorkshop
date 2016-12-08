@@ -3,49 +3,49 @@ package Domain;
 /**
  * Created by Mitchell on 08/12/2016.
  */
-public class Leerling {
+class Leerling {
     private String name;
     private Boolean result;
     private String ip;
     private Boolean ping;
 
-    public Leerling(String name, Boolean result, String ip, Boolean ping) {
+    Leerling(String name, Boolean result, String ip, Boolean ping) {
         this.name = name;
         this.result = result;
         this.ip = ip;
         this.ping = ping;
     }
 
-    public void setIp(String ip) {
+    void setIp(String ip) {
         this.ip = ip;
         checkData();
     }
 
-    public void setPing(Boolean ping) {
+    void setPing(Boolean ping) {
         this.ping = ping;
         checkData();
     }
 
     private void checkData() {
-        if (ip  != null && ping == true) {
+        if (ip  != null && ping) {
             result = true;
-            LeerlingHandler.Update();
+            UserListHandler.Update();
         }
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public Boolean getResult() {
+    Boolean getResult() {
         return result;
     }
 
-    public String getIp() {
+    String getIp() {
         return ip;
     }
 
-    public Boolean getPing() {
+    Boolean getPing() {
         return ping;
     }
 }

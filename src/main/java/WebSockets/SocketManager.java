@@ -1,6 +1,5 @@
 package WebSockets;
 
-import Domain.FactoryLeerlingen;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;
