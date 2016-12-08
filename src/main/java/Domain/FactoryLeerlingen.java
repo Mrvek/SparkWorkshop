@@ -18,6 +18,7 @@ public class FactoryLeerlingen {
     static {
         try {
             ArrayList<Leerling> gotten = JsonMaster.readList();
+            System.out.print(gotten);
             if (!gotten.isEmpty()) {
                 users = gotten;
             }
@@ -54,7 +55,9 @@ public class FactoryLeerlingen {
             Boolean result = L.getResult();
             RMap.put(name, result);
         }
+        System.out.print(RMap);
         JSONObject Result = jsonMaster.packJSON(RMap);
+        System.out.print(Result);
         return Result;
     }
 

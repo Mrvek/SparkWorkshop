@@ -30,7 +30,7 @@ public class WebSocketHandler {
     }
 
     @OnWebSocketClose
-    public void onClose(Session user) {
+    public void onClose(Session user, int statusCode, String reason) {
         sessions.remove(user);
     }
 

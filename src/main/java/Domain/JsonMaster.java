@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
  class JsonMaster {
-    static private String userListPath = "C:\\Users\\Mitchell\\ProjectWorkspace\\Java\\TestMavenSpark\\src\\main\\java\\UserList.json";
+    static private String userListPath = "C:\\Users\\Mitchell\\ProjectWorkspace\\Java\\SparkWorkshop\\src\\main\\java\\UserList.json";
     JsonMaster() {
     }
 
