@@ -1,3 +1,6 @@
+package Domain;
+
+import WebSockets.SocketManager;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -29,7 +32,7 @@ public class FactoryLeerlingen {
         System.out.print("M= " + leerlingen.get("Mitchell van Ek") + "\n");
     }
 
-    static void setleerling(String L) {
+    public void setleerling(String L) {
         System.out.print("We check for the value: " + L + "\n");
         for (String i : leerlingen.keySet()) {
             if (i.equals(L)) {
@@ -45,7 +48,7 @@ public class FactoryLeerlingen {
         }
     }
 
-    private static void updateFile() {
+    private void updateFile() {
         int changements = 0;
         try {
             Map<String, Boolean> data = getDataMap();
@@ -94,13 +97,9 @@ public class FactoryLeerlingen {
             System.out.print(obj.toJSONString());
         return List;
     }
-
-
-
-    private FactoryLeerlingen(){}
     
 
-    public static JSONObject packJSON() {
+    public JSONObject packJSON() {
         JSONObject job = new JSONObject();
 
         for (String i : leerlingen.keySet()) {
