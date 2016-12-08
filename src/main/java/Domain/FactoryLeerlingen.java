@@ -64,4 +64,13 @@ public class FactoryLeerlingen {
     public void UpdateFile() {
         jsonMaster.updateFile(users);
     }
+
+    public Object getLeerling(String leerling) {
+        for (Leerling L : users) {
+            if (L.getName().equals(leerling)) {
+                return L;
+            }
+        }
+        return null;
+    }
 }

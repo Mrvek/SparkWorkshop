@@ -30,4 +30,8 @@ public class UserListHandler {
     public static JSONObject getList() {
         return FL.getListInJSON();
     }
+
+    public static Object getLeerling(String Leerling) {
+        return FL.getLeerling(Leerling);
+    }
 }
