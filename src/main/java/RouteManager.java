@@ -21,9 +21,11 @@ public class RouteManager {
         webSocket("/list", WebSocketHandler.class);
         webSocket("/opdracht", OpdrachtSocketHandler.class);
 
-        get("/user", (req, res) -> {
+        get("/user/:name", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("hello", "Velocity World");
+            String s = req.params(":name");
+            model.put("name", s);
 
             // The wm files are located under the resources directory
             return new ModelAndView(model, "hello.vm");
