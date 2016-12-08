@@ -10,7 +10,6 @@ import java.io.IOException;
  */
 public class SocketManager {
     private static WebSocketHandler ListSocket = new WebSocketHandler();
-    private static FactoryLeerlingen FL = new FactoryLeerlingen();
     private static OpdrachtSocketHandler OpdrachtSocket = new OpdrachtSocketHandler();
 
 
@@ -19,11 +18,5 @@ public class SocketManager {
     }
 
     /*Manages Domain.FactoryLeerlingen too because of small system*/
-    static JSONObject getList() {
-        return FL.packJSON();
-    }
 
-    static void setleerling(String s) {
-        FL.setleerling(s);
-    }
 }
