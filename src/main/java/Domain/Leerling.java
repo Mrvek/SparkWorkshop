@@ -43,21 +43,21 @@ public class Leerling {
         }
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    Boolean getResult() {
+    public Boolean getResult() {
         return result;
     }
 
-    String getIp() {
+    public String getIp() {
         return ip;
     }
-    String getPort() {
+    public String getPort() {
         return port;
     }
-    Boolean getPing() {
+    public Boolean getPing() {
         return ping;
     }
 }

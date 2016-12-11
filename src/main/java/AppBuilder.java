@@ -19,11 +19,11 @@ public class AppBuilder {
 
     public static void setup() {
         try {
-            ArrayList<Assignment> assignments = JsonAssignment.readList();
-            System.out.print(assignments);
-            if (!assignments.isEmpty()) {
-                FactoryAssignments.setAssignmentArrayList(assignments);
-            }
+//            ArrayList<Assignment> assignments = JsonAssignment.readList();
+//            System.out.print(assignments);
+//            if (!assignments.isEmpty()) {
+//                FactoryAssignments.setAssignmentArrayList(assignments);
+//            }
             ArrayList<Leerling> gotten = JsonLMaster.readList();
             System.out.print(gotten);
             if (!gotten.isEmpty()) {
