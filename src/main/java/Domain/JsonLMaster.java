@@ -12,11 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
- class JsonMaster {
+ public class JsonLMaster {
 	static private String userListPath = "src/main/java/UserList.json";
-
-    JsonMaster() {
-    }
 
     void updateFile(List<Leerling> users) {
         try {
@@ -49,7 +46,7 @@ import java.util.Map;
         return job;
     }
 
-    static ArrayList<Leerling> readList() throws IOException, ParseException {
+    public static ArrayList<Leerling> readList() throws IOException, ParseException {
         ArrayList<Leerling> returnList = new ArrayList<>();
         JSONParser pars = new JSONParser();
         JSONArray array = (JSONArray) pars.parse(new FileReader(userListPath));

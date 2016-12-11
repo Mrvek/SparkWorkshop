@@ -13,21 +13,8 @@ import java.util.Map;
  * Created by Mitchell on 07/12/2016.
  */
 public class FactoryLeerlingen {
-    private final JsonMaster jsonMaster = new JsonMaster();
-    static List<Leerling> users;
-    static {
-        try {
-            ArrayList<Leerling> gotten = JsonMaster.readList();
-            System.out.print(gotten);
-            if (!gotten.isEmpty()) {
-                users = gotten;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
+    private final JsonLMaster jsonMaster = new JsonLMaster();
+    private static List<Leerling> users;
 
     public boolean setLeerling(String name, String ip, String port, Boolean ping) {
         for (Leerling L : users) {
@@ -38,6 +25,14 @@ public class FactoryLeerlingen {
                 return true;
             }
         }return false;
+    }
+
+    public static List<Leerling> getUsers() {
+        return users;
+    }
+
+    public static void setUsers(List<Leerling> users) {
+        FactoryLeerlingen.users = users;
     }
 
     public static Leerling createLeerling(JSONObject object) {

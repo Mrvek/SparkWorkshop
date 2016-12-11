@@ -22,7 +22,7 @@ public class RouteManager {
         webSocket("/list", WebSocketHandler.class);
 
 
-        webSocket("/opdracht", OpdrachtSocketHandler.class);
+        webSocket("/ping", OpdrachtSocketHandler.class);
 
         get("/user", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

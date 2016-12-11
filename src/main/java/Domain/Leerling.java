@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Mitchell on 08/12/2016.
  */
-class Leerling {
+public class Leerling {
     private String name;
     private List doneAssignments;
     private Boolean result;
