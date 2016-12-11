@@ -1,5 +1,7 @@
-package Domain;
+package Domain.JSONS;
 
+import Domain.FactoryLeerlingen;
+import Domain.Leerling;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,11 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
- public class JsonLMaster {
+ public class JsonLMaster implements IJsonMaster {
 	static private String userListPath = "src/main/java/UserList.json";
 
-    void updateFile(List<Leerling> users) {
+     @Override
+     public void updateFile(List objects) {
         try {
+            List<Leerling> users = (List<Leerling>) objects;
             JSONArray array = new JSONArray();
             for (Leerling L : users) {
                 JSONObject obj = new JSONObject();
@@ -36,7 +40,7 @@ import java.util.Map;
         }
     }
 
-    JSONObject packJSON(Map<String, Boolean> RMap) {
+    public JSONObject packJSON(Map<String, Boolean> RMap) {
         JSONObject job = new JSONObject();
 
         for (String i : RMap.keySet()) {
@@ -45,8 +49,8 @@ import java.util.Map;
         }
         return job;
     }
-
-    public static ArrayList<Leerling> readList() throws IOException, ParseException {
+     @Override
+    public ArrayList readList() throws IOException, ParseException {
         ArrayList<Leerling> returnList = new ArrayList<>();
         JSONParser pars = new JSONParser();
         JSONArray array = (JSONArray) pars.parse(new FileReader(userListPath));
@@ -57,4 +61,6 @@ import java.util.Map;
         }
         return returnList;
     }
-}
+
+
+ }
