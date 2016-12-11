@@ -1,7 +1,6 @@
 package Domain;
 
 import WebSockets.SocketManager;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;

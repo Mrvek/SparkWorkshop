@@ -29,8 +29,9 @@ class Leerling {
     private void checkData() {
         if (ip  != null && ping) {
             result = true;
-            UserListHandler.Update();
+            
         }
+        UserListHandler.Update();
     }
 
     String getName() {
