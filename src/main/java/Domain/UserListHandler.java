@@ -8,12 +8,16 @@ import java.io.IOException;
 /**
  * Created by Mitchell on 08/12/2016.
  */
+
+// Controller voor factory leerlingen - enige die factory mag benaderen.
+
+
 public class UserListHandler {
     private static FactoryLeerlingen FL = new FactoryLeerlingen();
 
 
-    static void setleerling(String name, Boolean ping, String ip) {
-        FL.setleerling(name, ping, ip);
+    static void setleerling(String name, String ip, String port, Boolean ping) {
+        FL.setLeerling(name, port, ip, ping);
     }
 
     static void Update() {

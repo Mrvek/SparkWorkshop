@@ -12,10 +12,10 @@ import spark.Response;
 public class AssignmentCheck {
     private Leerling checkTarget;
 
-    public static Object check(Request req, Response res) {
-        if (req.attribute(":name")) {
-            return UserListHandler.getLeerling(req.attribute(":name"));
-
-        }else return UserListHandler.getLeerling("Mitchell van Ek");
-    }
+//    public static Object check(Request req, Response res) {
+//        if (req.attribute(":name")) {
+//            return UserListHandler.getLeerling(req.attribute(":name"));
+//
+ //       }else return UserListHandler.getLeerling("Mitchell van Ek");
+//    }
 }
