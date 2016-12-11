@@ -1,18 +1,25 @@
 package Domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Mitchell on 08/12/2016.
  */
 class Leerling {
     private String name;
+    private List doneAssignments;
     private Boolean result;
     private String ip;
-    private Boolean ping;
+    private String port;
+    private Boolean ping;    
 
-    Leerling(String name, Boolean result, String ip, Boolean ping) {
+    Leerling(String name, Boolean result, String ip, String port, Boolean ping) {
         this.name = name;
+        this.doneAssignments = new ArrayList<Assignment>();
         this.result = result;
         this.ip = ip;
+        this.port = port;
         this.ping = ping;
     }
 
@@ -20,7 +27,10 @@ class Leerling {
         this.ip = ip;
         checkData();
     }
-
+    void setPort(String port) {
+        this.port = port;
+        checkData();
+    }
     void setPing(Boolean ping) {
         this.ping = ping;
         checkData();
@@ -45,7 +55,9 @@ class Leerling {
     String getIp() {
         return ip;
     }
-
+    String getPort() {
+        return port;
+    }
     Boolean getPing() {
         return ping;
     }

@@ -29,10 +29,11 @@ public class FactoryLeerlingen {
         }
     }
 
-    public boolean setleerling(String name, Boolean ping, String ip) {
+    public boolean setLeerling(String name, String ip, String port, Boolean ping) {
         for (Leerling L : users) {
             if (L.getName().equals(name)) {
                 L.setIp(ip);
+                L.setPort(port);
                 L.setPing(ping);
                 return true;
             }
@@ -43,8 +44,9 @@ public class FactoryLeerlingen {
         String name = (String) object.get("Name");
         Boolean result = (Boolean) object.get("Result");
         String ip = (String) object.get("Ip");
+        String port = (String) object.get("Port");
         Boolean ping = (Boolean) object.get("Ping");
-        Leerling l = new Leerling(name, result, ip, ping);
+        Leerling l = new Leerling(name, result, ip, port, ping);
         return l;
     }
 
