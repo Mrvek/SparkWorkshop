@@ -14,7 +14,7 @@ public class Leerling {
     private String port;
     private Boolean ping;    
 
-    Leerling(String name, Boolean result, String ip, String port, Boolean ping) {
+    public Leerling(String name, Boolean result, String ip, String port, Boolean ping) {
         this.name = name;
         this.doneAssignments = new ArrayList<Assignment>();
         this.result = result;
@@ -23,15 +23,15 @@ public class Leerling {
         this.ping = ping;
     }
 
-    void setIp(String ip) {
+    public void setIp(String ip) {
         this.ip = ip;
         checkData();
     }
-    void setPort(String port) {
+    public void setPort(String port) {
         this.port = port;
         checkData();
     }
-    void setPing(Boolean ping) {
+    public void setPing(Boolean ping) {
         this.ping = ping;
         checkData();
     }
