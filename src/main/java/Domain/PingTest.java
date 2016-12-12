@@ -1,3 +1,5 @@
+package Domain;
+
 import java.net.URI;
 import javax.websocket.ClientEndpoint;
 import javax.websocket.CloseReason;
@@ -7,19 +9,21 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
-import java.net.URI;
 import java.net.URISyntaxException;
 
 @ClientEndpoint
-public class Test {
+public class PingTest {
     Session userSession = null;
     private MessageHandler messageHandler;
+    private URI endpointURI;
 
 
-    public Test(URI endpointURI) {
+    public PingTest(URI endpointURI) {
+        this.endpointURI = endpointURI;
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             container.connectToServer(this, endpointURI);
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -77,19 +81,5 @@ public class Test {
 
     public static interface MessageHandler {
         public void handleMessage(String message);
-    }
-
-    public static void testingTest() throws URISyntaxException, InterruptedException {
-        // open websocket
-        final Test clientEndPoint = new Test(new URI("ws://localhost:4567/list"));
-
-        // add listener
-
-
-        // send message to websocket
-
-        // wait 5 seconds for messages from websocket
-        Thread.sleep(5000);
-
     }
 }

@@ -63,10 +63,12 @@ public class RouteManager {
         get("/user/:name/assignment/:assignment", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String naam = req.params(":assignment");
+            String leerling = req.params(":name");
+            Leerling L = (Leerling) UserListHandler.getLeerling(leerling);
             Assignment A = AssignmentHandler.getAssignment(naam);
             System.out.print(A.getNaam());
             AssignmentCheck ac = new AssignmentCheck();
-            ac.check(A);
+            ac.check(A, L);
 
 
 
@@ -74,13 +76,7 @@ public class RouteManager {
             return new ModelAndView(model, "assignmentlist.vm");
         }, new VelocityTemplateEngine());
 
-        try {
-            Test.testingTest();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
 
     }
