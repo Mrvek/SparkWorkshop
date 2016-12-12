@@ -12,6 +12,9 @@ import spark.Response;
 public class AssignmentCheck {
     private Leerling checkTarget;
 
+    public void check(Assignment a) {
+    }
+
 //    public static Object check(Request req, Response res) {
 //        if (req.attribute(":name")) {
 //            return UserListHandler.getLeerling(req.attribute(":name"));
