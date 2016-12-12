@@ -12,7 +12,7 @@ public class Leerling {
     private Boolean result;
     private String ip;
     private String port;
-    private Boolean ping;    
+    private Boolean ping;
 
     public Leerling(String name, Boolean result, String ip, String port, Boolean ping) {
         this.name = name;
@@ -24,23 +24,27 @@ public class Leerling {
     }
 
     public void setIp(String ip) {
-        this.ip = ip;
-        checkData();
+        if (!(ip.isEmpty() || ip == null)) {
+            this.ip = ip;
+        }
+            checkData();
     }
+
     public void setPort(String port) {
         this.port = port;
         checkData();
     }
+
     public void setPing(Boolean ping) {
         this.ping = ping;
         checkData();
     }
 
     private void checkData() {
-        if (ip  != null && ping) {
+        if (ip != null && ping) {
             result = true;
-            UserListHandler.Update();
         }
+            UserListHandler.Update();
     }
 
     public String getName() {
@@ -54,10 +58,16 @@ public class Leerling {
     public String getIp() {
         return ip;
     }
+
     public String getPort() {
         return port;
     }
+
     public Boolean getPing() {
         return ping;
+    }
+
+    public void addCompletedAssignment(Assignment assignment) {
+        doneAssignments.add(assignment);
     }
 }

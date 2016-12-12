@@ -37,4 +37,9 @@ public class UserListHandler {
     public static Object getLeerling(String Leerling) {
         return FL.getLeerling(Leerling);
     }
+
+    public static void updateLists() {
+        FL.UpdateFile();
+//        TODO: update both lists
+    }
 }

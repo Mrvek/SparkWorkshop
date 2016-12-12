@@ -1,3 +1,5 @@
+import Domain.Leerling;
+import Domain.UserListHandler;
 import WebSockets.OpdrachtSocketHandler;
 import WebSockets.WebSocketHandler;
 import spark.ModelAndView;
@@ -26,9 +28,19 @@ public class RouteManager {
 
         webSocket("/ping", OpdrachtSocketHandler.class);
 
-        get("/assignment", (req, res) -> {
+        get("/user/:name", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("hello", "");
+            String naam = req.params(":name");
+            Leerling L = (Leerling) UserListHandler.getLeerling(naam);
+            System.out.print(L.getName());
+            if (L.getName().equals("mitchell")) {
+                UserListHandler.updateLists();
+            } else {
+                L.setIp(req.ip());
+            }
+            model.put("name", req.params(":name"));
+            model.put("ip", L.getIp());
+            model.put("port", L.getPort());
 
 
             // The wm files are located under the resources directory
