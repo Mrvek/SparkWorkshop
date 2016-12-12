@@ -81,7 +81,7 @@ public class Test {
 
     public static void testingTest() throws URISyntaxException, InterruptedException {
         // open websocket
-        final Test clientEndPoint = new Test(new URI("ws://192.168.178.57:4567/list"));
+        final Test clientEndPoint = new Test(new URI("ws://localhost:4567/list"));
 
         // add listener
 
