@@ -28,6 +28,7 @@ import java.util.Map;
                 obj.put("Name", L.getName());
                 obj.put("Result", L.getResult());
                 obj.put("Ip", L.getIp());
+                obj.put("Port", L.getPort());
                 obj.put("Ping", L.getPing());
                 array.add(obj);
             }
