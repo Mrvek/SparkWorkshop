@@ -8,7 +8,7 @@ import java.net.URISyntaxException;//import spark.Session;
  */
 public class AssignmentCheck {
 
-    public void check(Assignment a, Leerling leerling) {
+    public boolean check(Assignment a, Leerling leerling) {
 //        TODO: check all assignments
         switch (a.getNaam()){
             case "assignment1":
@@ -27,5 +27,6 @@ public class AssignmentCheck {
                 break;
 
         }
+        return false;
     }
 }

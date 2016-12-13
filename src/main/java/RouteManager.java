@@ -66,9 +66,36 @@ public class RouteManager {
             String leerling = req.params(":name");
             Leerling L = (Leerling) UserListHandler.getLeerling(leerling);
             Assignment A = AssignmentHandler.getAssignment(naam);
+            System.out.print(":" + L + ";" + A + ":\n");
+            model.put("title", A.getNaam());
+            model.put("description", A.getDescription());
+            model.put("done", "hi");
+
+
+
+            // The wm files are located under the resources directory
+            return new ModelAndView(model, "assignmentdetails.vm");
+        }, new VelocityTemplateEngine());
+
+
+        get("/user/:name/assignment/:assignment/check", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String naam = req.params(":assignment");
+            String leerling = req.params(":name");
+            Leerling L = (Leerling) UserListHandler.getLeerling(leerling);
+            Assignment A = AssignmentHandler.getAssignment(naam);
             System.out.print(A.getNaam());
             AssignmentCheck ac = new AssignmentCheck();
-            ac.check(A, L);
+            boolean check = ac.check(A, L);
+
+            model.put("title", A.getNaam());
+            model.put("description", A.getDescription());
+            if (check) {
+                model.put("done", "Finished");
+            }else {
+                model.put("done", "Sorry, try again!");
+            }
+
 
 
 
@@ -76,8 +103,6 @@ public class RouteManager {
             return new ModelAndView(model, "assignmentlist.vm");
         }, new VelocityTemplateEngine());
 
-//        TODO: new get for activating the check?
-        
 
 
 

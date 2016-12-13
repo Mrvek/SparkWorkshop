@@ -13,6 +13,7 @@ public class Leerling {
     private String ip;
     private String port;
     private Boolean ping;
+    public String lastmessage;
 
     public Leerling(String name, Boolean result, String ip, String port, Boolean ping) {
         this.name = name;
