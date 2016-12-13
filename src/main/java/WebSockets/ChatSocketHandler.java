@@ -1,10 +1,10 @@
 package WebSockets;
 
-import Domain.PLeerling.UserListHandler;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
+import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.json.simple.JSONObject;
 
 import java.io.IOException;
@@ -14,6 +14,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 /**
  * Created by Mitchell on 13/12/2016.
  */
+
+@WebSocket
 public class ChatSocketHandler {
     private static final Queue<Session> sessions = new ConcurrentLinkedQueue<>();
 
