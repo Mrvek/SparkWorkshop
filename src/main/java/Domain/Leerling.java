@@ -24,6 +24,14 @@ public class Leerling {
         this.ping = ping;
     }
 
+    public String getLastmessage() {
+        return lastmessage;
+    }
+
+    public void setLastmessage(String lastmessage) {
+        this.lastmessage = lastmessage;
+    }
+
     public void setIp(String ip) {
         if (!(ip.isEmpty() || ip == null)) {
             this.ip = ip;

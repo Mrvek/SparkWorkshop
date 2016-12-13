@@ -10,7 +10,7 @@ public class AssignmentCheck {
 
     public boolean check(Assignment a, Leerling leerling) {
 //        TODO: check all assignments
-        switch (a.getNaam()){
+        switch (a.getNaam()) {
             case "assignment1":
                 break;
             case "assignment2":
@@ -19,13 +19,18 @@ public class AssignmentCheck {
                 try {
                     PingTest test = new PingTest(new URI("ws://" + leerling.getIp() + ":" + leerling.getPort() + "/ping"));
                     leerling.addCompletedAssignment(a);
+                    return true;
                 } catch (URISyntaxException e) {
                     e.printStackTrace();
                 }
                 break;
             case "assignment4":
+                if (!(leerling.getLastmessage().isEmpty() || leerling.getLastmessage() == null)) {
+                    leerling.addCompletedAssignment(a);
+                    return true;
+                }
                 break;
-
+            default: return false;
         }
         return false;
     }

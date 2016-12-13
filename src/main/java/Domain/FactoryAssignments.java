@@ -10,7 +10,8 @@ public class FactoryAssignments {
         return assignmentArrayList;
     }
 
-    public void setAssignmentArrayList(ArrayList<Assignment> assignmentArrayList) {
-        FactoryAssignments.assignmentArrayList = assignmentArrayList;
+    public void createAssignment(String title, String description) {
+        Assignment a = new Assignment(title, description);
+        assignmentArrayList.add(a);
     }
 }

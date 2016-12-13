@@ -1,9 +1,12 @@
 package Domain;
 
+import Domain.JSONS.JsonLMaster;
 import WebSockets.SocketManager;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Mitchell on 08/12/2016.
@@ -39,9 +42,18 @@ public class UserListHandler {
     }
 
     public static void updateLists() {
-        FL.UpdateFile();
-//        TODO: update both lists
+        JsonLMaster JLM = new JsonLMaster();
+        ArrayList<Leerling> gotten = null;
+        try {
+            gotten = JLM.readList();
+            System.out.print(gotten);
+            if (!gotten.isEmpty()) {
+                FactoryLeerlingen.setUsers(gotten);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
-
-    
 }

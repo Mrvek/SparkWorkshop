@@ -16,4 +16,8 @@ public class AssignmentHandler {
         }
         return null;
     }
+
+    public static void createAssignment(String title, String description) {
+        AS.createAssignment(title, description);
+    }
 }
