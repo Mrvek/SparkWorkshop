@@ -14,11 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
- public class JsonLMaster implements IJsonMaster {
+ public class JsonLMaster {
 //     TODO: fixed port?
-	static private String userListPath = "src/main/java/UserList.json";
+	static private String userListPath = "src/main/java/Main/UserList.json";
 
-     @Override
      public void updateFile(List objects) {
         try {
             List<Leerling> users = (List<Leerling>) objects;
@@ -51,7 +50,6 @@ import java.util.Map;
         }
         return job;
     }
-     @Override
     public ArrayList readList() throws IOException, ParseException {
         ArrayList<Leerling> returnList = new ArrayList<>();
         JSONParser pars = new JSONParser();

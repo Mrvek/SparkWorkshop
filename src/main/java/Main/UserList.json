@@ -1,1 +1,2 @@
-[{"Ip":"0:0:0:0:0:0:0:1","Port":"9090","Ping":false,"Name":"Mitchell van Ek","Result":false}]
+[{"Ip":"0:0:0:0:0:0:0:1","Port":"9090","Ping":false,"Name":"Mitchell van Ek","Result":false},
+  {"Ip":"0:0:0:0:0:0:0:1","Port":"8080","Ping":false,"Name":"Joches Kuum","Result":false}]
