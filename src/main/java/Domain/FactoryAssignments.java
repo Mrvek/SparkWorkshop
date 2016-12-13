@@ -6,11 +6,11 @@ public class FactoryAssignments {
     private static ArrayList<Assignment> assignmentArrayList = new ArrayList<>();
 
 
-    public static ArrayList<Assignment> getAssignmentArrayList() {
+    public ArrayList<Assignment> getAssignmentArrayList() {
         return assignmentArrayList;
     }
 
-    public static void setAssignmentArrayList(ArrayList<Assignment> assignmentArrayList) {
+    public void setAssignmentArrayList(ArrayList<Assignment> assignmentArrayList) {
         FactoryAssignments.assignmentArrayList = assignmentArrayList;
     }
 }

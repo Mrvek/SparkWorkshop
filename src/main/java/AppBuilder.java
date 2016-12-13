@@ -19,6 +19,7 @@ public class AppBuilder {
 
     public static void setup() {
         try {
+//            TODO: Finish  assignmentbuilder, may be hardcoded
 //            ArrayList<Assignment> assignments = JsonAssignment.readList();
 //            System.out.print(assignments);
 //            if (!assignments.isEmpty()) {

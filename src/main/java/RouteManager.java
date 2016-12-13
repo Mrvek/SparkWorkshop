@@ -76,6 +76,9 @@ public class RouteManager {
             return new ModelAndView(model, "assignmentlist.vm");
         }, new VelocityTemplateEngine());
 
+//        TODO: new get for activating the check?
+        
+
 
 
 
