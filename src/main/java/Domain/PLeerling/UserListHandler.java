@@ -1,4 +1,4 @@
-package Domain;
+package Domain.PLeerling;
 
 import Domain.JSONS.JsonLMaster;
 import WebSockets.SocketManager;

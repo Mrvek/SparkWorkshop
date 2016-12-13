@@ -1,7 +1,11 @@
-import Domain.*;
+package Main;
+
 import Domain.JSONS.IJsonMaster;
 import Domain.JSONS.JsonAssignment;
 import Domain.JSONS.JsonLMaster;
+import Domain.PAssignment.AssignmentHandler;
+import Domain.PLeerling.FactoryLeerlingen;
+import Domain.PLeerling.Leerling;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;

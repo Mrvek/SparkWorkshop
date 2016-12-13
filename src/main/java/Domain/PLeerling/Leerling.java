@@ -1,4 +1,6 @@
-package Domain;
+package Domain.PLeerling;
+
+import Domain.PAssignment.Assignment;
 
 import java.util.ArrayList;
 import java.util.List;

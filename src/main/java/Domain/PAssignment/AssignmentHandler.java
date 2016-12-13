@@ -1,4 +1,4 @@
-package Domain;
+package Domain.PAssignment;
 
 import java.util.ArrayList;
 

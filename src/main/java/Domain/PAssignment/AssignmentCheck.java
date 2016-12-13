@@ -1,4 +1,6 @@
-package Domain;
+package Domain.PAssignment;
+
+import Domain.PLeerling.Leerling;
 
 import java.net.URI;
 import java.net.URISyntaxException;//import spark.Session;

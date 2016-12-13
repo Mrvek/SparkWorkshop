@@ -1,4 +1,4 @@
-package Domain;
+package Domain.PAssignment;
 
 public class Assignment {
 	private String naam;

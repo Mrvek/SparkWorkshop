@@ -1,20 +1,11 @@
-package Domain;
+package Domain.PAssignment;
 
+import javax.websocket.*;
 import java.net.URI;
-import javax.websocket.ClientEndpoint;
-import javax.websocket.CloseReason;
-import javax.websocket.ContainerProvider;
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.WebSocketContainer;
-import java.net.URISyntaxException;
 
 @ClientEndpoint
 public class PingTest {
     Session userSession = null;
-    private MessageHandler messageHandler;
     private URI endpointURI;
 
 

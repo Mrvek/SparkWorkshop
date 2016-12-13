@@ -1,7 +1,7 @@
 package Domain.JSONS;
 
-import Domain.FactoryLeerlingen;
-import Domain.Leerling;
+import Domain.PLeerling.FactoryLeerlingen;
+import Domain.PLeerling.Leerling;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

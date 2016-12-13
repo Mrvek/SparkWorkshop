@@ -1,10 +1,15 @@
-import Domain.*;
+package Main;
+
+import Domain.PAssignment.Assignment;
+import Domain.PAssignment.AssignmentCheck;
+import Domain.PAssignment.AssignmentHandler;
+import Domain.PLeerling.Leerling;
+import Domain.PLeerling.UserListHandler;
 import WebSockets.OpdrachtSocketHandler;
 import WebSockets.WebSocketHandler;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
