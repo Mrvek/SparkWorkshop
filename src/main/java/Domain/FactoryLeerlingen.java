@@ -37,7 +37,7 @@ public class FactoryLeerlingen {
         String name = (String) object.get("Name");
         Boolean result = (Boolean) object.get("Result");
         String ip = (String) object.get("Ip");
-        String port = (String) object.get("Port");
+        String port = String.valueOf(object.get("Port"));
         Boolean ping = (Boolean) object.get("Ping");
         Leerling l = new Leerling(name, result, ip, port, ping);
         return l;
