@@ -70,7 +70,4 @@ public class PingTest {
         this.userSession.getAsyncRemote().sendText(message);
     }
 
-    public static interface MessageHandler {
-        public void handleMessage(String message);
-    }
 }

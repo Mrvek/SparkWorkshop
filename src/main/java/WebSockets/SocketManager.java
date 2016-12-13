@@ -16,6 +16,4 @@ public class SocketManager {
         ListSocket.UpdateListOfAllSessions(jsonObject);
     }
 
-    /*Manages Domain.PLeerling.FactoryLeerlingen too because of small system*/
-
 }

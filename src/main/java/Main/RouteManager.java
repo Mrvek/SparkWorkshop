@@ -5,6 +5,7 @@ import Domain.PAssignment.AssignmentCheck;
 import Domain.PAssignment.AssignmentHandler;
 import Domain.PLeerling.Leerling;
 import Domain.PLeerling.UserListHandler;
+import WebSockets.ChatSocketHandler;
 import WebSockets.OpdrachtSocketHandler;
 import WebSockets.WebSocketHandler;
 import spark.ModelAndView;
@@ -27,6 +28,7 @@ public class RouteManager {
 
 //        Routemanagement
         webSocket("/list", WebSocketHandler.class);
+        webSocket("/chat", ChatSocketHandler.class);
 
 
         webSocket("/ping", OpdrachtSocketHandler.class);
