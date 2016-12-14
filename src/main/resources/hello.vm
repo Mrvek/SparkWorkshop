@@ -1,3 +1,4 @@
 <h1>$name</h1>
 <h2>$ip</h2>
-<h2>$port</h2>
+<h3>$port</h3>
+<h4>$random</h4>
