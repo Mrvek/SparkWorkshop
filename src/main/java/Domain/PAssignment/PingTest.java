@@ -29,6 +29,7 @@ public class PingTest {
     public void onOpen(Session userSession) {
         System.out.println("opening websocket");
         this.userSession = userSession;
+        sendMessage("Ping");
     }
 
     /**

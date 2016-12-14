@@ -28,11 +28,14 @@ public class Leerling {
     }
 
     public String getLastmessage() {
+
         return lastmessage;
     }
 
     public void setLastmessage(String lastmessage) {
         this.lastmessage = lastmessage;
+        this.result = true;
+        UserListHandler.Update();
     }
 
     public void setIp(String ip) {
@@ -56,6 +59,7 @@ public class Leerling {
 
     public void setResult(Boolean result) {
         this.result = result;
+        UserListHandler.Update();
     }
 
     public String getName() {
