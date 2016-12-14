@@ -14,6 +14,15 @@ public class AssignmentCheck {
 //        TODO: check all assignments
         switch (a.getNaam()) {
             case "assignment1":
+
+                try {
+                    HelloTest test = new HelloTest(leerling);
+                    leerling.addCompletedAssignment(a);
+                    return true;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 break;
             case "assignment2":
                 break;
