@@ -14,6 +14,7 @@ public class Leerling {
     private Boolean result;
     private String ip;
     private String port;
+    private double random = 0.0;
     private Boolean ping;
     public String lastmessage;
 
@@ -49,6 +50,9 @@ public class Leerling {
         this.ping = ping;
         UserListHandler.Update();
     }
+    public void setRandom(double random){
+        this.random = random;
+    }
 
     public void setResult(Boolean result) {
         this.result = result;
@@ -68,6 +72,10 @@ public class Leerling {
 
     public String getPort() {
         return port;
+    }
+
+    public double getRandom() {
+        return random;
     }
 
     public Boolean getPing() {
