@@ -30,6 +30,7 @@ public class AssignmentCheck {
                 try {
                     PingTest test = new PingTest(new URI("ws://" + leerling.getIp() + ":" + leerling.getPort() + "/ping"));
                     leerling.addCompletedAssignment(a);
+                    test.sendMessage("Assignment voltooid!");
                     return true;
                 } catch (URISyntaxException e) {
                     e.printStackTrace();

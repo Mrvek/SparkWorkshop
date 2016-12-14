@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
  public class JsonLMaster {
-//     TODO: fixed port?
 	static private String userListPath = "src/main/java/Main/UserList.json";
 
      public void updateFile(List objects) {

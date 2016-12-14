@@ -44,7 +44,7 @@ public class UserListHandler {
 
     public static void updateLists() {
         JsonLMaster JLM = new JsonLMaster();
-        ArrayList<Leerling> gotten = null;
+        ArrayList<Leerling> gotten;
         try {
             gotten = JLM.readList();
             System.out.print(gotten);

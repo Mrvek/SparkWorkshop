@@ -2,7 +2,6 @@ package WebSockets;
 
 import Domain.PLeerling.Leerling;
 import Domain.PLeerling.UserListHandler;
-import org.eclipse.jetty.security.PropertyUserStore;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
@@ -45,7 +44,6 @@ public class ChatSocketHandler {
     @OnWebSocketMessage
     public void onMessage(Session user, String message) {
         try {
-//            TODO: set message as lastmessage of the user
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(message);
             JSONObject O = (JSONObject) obj;
@@ -54,6 +52,7 @@ public class ChatSocketHandler {
             Leerling L = UserListHandler.getLeerling(name);
             if (L.getIp().equals(user.getRemoteAddress())) {
                 SendMessage(message);
+                L.setLastmessage(M);
             }
             System.out.print(message);
         } catch (IOException e) {

@@ -35,7 +35,7 @@ public class Leerling {
     }
 
     public void setIp(String ip) {
-        if (!(ip.isEmpty() || ip == null)) {
+        if (!(ip.isEmpty()) && this.ip.equals("0:0:0:0:0:0:0:1")) {
             this.ip = ip;
         }
         UserListHandler.Update();
@@ -76,5 +76,16 @@ public class Leerling {
 
     public void addCompletedAssignment(Assignment assignment) {
         doneAssignments.add(assignment);
+    }
+
+    @Override
+    public String toString() {
+        return "Leerling{" +
+                "name='" + name + '\'' +
+                ", result=" + result +
+                "\n\t ip='" + ip + '\'' +
+                ", port='" + port + '\'' +
+                ", lastmessage='" + lastmessage + '\'' +
+                "} \n";
     }
 }
