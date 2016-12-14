@@ -19,7 +19,7 @@ public class AssignmentCheck {
             switch (a.getNaam()) {
                 case "assignment1":
                     try {
-                        HelloTest test = new HelloTest(leerling);
+                        HelloTest test = new HelloTest(leerling,1);
                         leerling.addCompletedAssignment(a);
                         result = true;
                     } catch (Exception e) {
@@ -27,7 +27,14 @@ public class AssignmentCheck {
                     }
                     break;
                 case "assignment2":
-                    result = true;
+                    try {
+                        leerling.setRandom(Math.random());
+                        HelloTest test2 = new HelloTest(leerling,2);
+                        leerling.addCompletedAssignment(a);
+                        result = true;
+                    } catch (Exception e) {
+                        System.out.print(leerling.getName() + "heeft niet voldaan aan assignment 2\n");
+                    }
                     break;
                 case "assignment3":
                     try {
