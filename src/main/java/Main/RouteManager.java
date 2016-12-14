@@ -56,7 +56,7 @@ public class RouteManager {
             String naam = req.params(":name");
             Leerling L = (Leerling) UserListHandler.getLeerling(naam);
             System.out.print(L.getName());
-            if (L.getName().equals("mitchell")) {
+            if (L.getName().equals("Mitchell van Ek")) {
                 UserListHandler.updateLists();
             } else {
                 L.setIp(req.ip());

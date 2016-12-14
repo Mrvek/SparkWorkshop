@@ -38,24 +38,20 @@ public class Leerling {
         if (!(ip.isEmpty() || ip == null)) {
             this.ip = ip;
         }
-            checkData();
+        UserListHandler.Update();
     }
 
     public void setPort(String port) {
         this.port = port;
-        checkData();
     }
 
     public void setPing(Boolean ping) {
         this.ping = ping;
-        checkData();
+        UserListHandler.Update();
     }
 
-    private void checkData() {
-        if (ip != null && ping) {
-            result = true;
-        }
-            UserListHandler.Update();
+    public void setResult(Boolean result) {
+        this.result = result;
     }
 
     public String getName() {

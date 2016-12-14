@@ -38,6 +38,7 @@ public class AssignmentCheck {
             case "assignment4":
                 if (!(leerling.getLastmessage().isEmpty() || leerling.getLastmessage() == null)) {
                     leerling.addCompletedAssignment(a);
+                    leerling.setResult(true);
                     return true;
                 }
                 break;

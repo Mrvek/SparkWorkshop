@@ -3,6 +3,7 @@ package Domain.PLeerling;
 import Domain.JSONS.JsonLMaster;
 import org.json.simple.JSONObject;
 
+import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,9 +61,18 @@ public class FactoryLeerlingen {
         jsonMaster.updateFile(users);
     }
 
-    public Object getLeerling(String leerling) {
+    public Leerling getLeerling(String leerling) {
         for (Leerling L : users) {
             if (L.getName().equals(leerling)) {
+                return L;
+            }
+        }
+        return null;
+    }
+
+    public Leerling getLeerlingByIp(InetSocketAddress remoteAddress) {
+        for (Leerling L : users) {
+            if (L.getIp().equals(remoteAddress)) {
                 return L;
             }
         }

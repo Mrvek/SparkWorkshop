@@ -19,6 +19,7 @@ public class OpdrachtSocketHandler {
     public void onConnect(Session user) throws Exception {
         sessions.add(user);
         user.setIdleTimeout(10000);
+        sendMessage("Ping!", user);
     }
 
     @OnWebSocketClose

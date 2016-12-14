@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.util.ArrayList;
 
 /**
@@ -37,7 +38,7 @@ public class UserListHandler {
         return FL.getListInJSON();
     }
 
-    public static Object getLeerling(String Leerling) {
+    public static Leerling getLeerling(String Leerling) {
         return FL.getLeerling(Leerling);
     }
 
@@ -55,5 +56,9 @@ public class UserListHandler {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Leerling getLeerlingByIp(InetSocketAddress remoteAddress) {
+        return FL.getLeerlingByIp(remoteAddress);
     }
 }
