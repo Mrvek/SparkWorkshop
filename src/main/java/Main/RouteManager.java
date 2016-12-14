@@ -77,6 +77,7 @@ public class RouteManager {
             model.put("title", A.getNaam());
             model.put("description", A.getDescription());
             model.put("done", "");
+            model.put("check", A.getNaam() + "/check");
 
 
 
@@ -93,15 +94,16 @@ public class RouteManager {
             Assignment A = AssignmentHandler.getAssignment(naam);
             System.out.print(A.getNaam());
             AssignmentCheck ac = new AssignmentCheck();
-            boolean check = ac.check(A, L);
+//            boolean check = ac.check(A, L);
 
             model.put("title", A.getNaam());
             model.put("description", A.getDescription());
-            if (check) {
-                model.put("done", "Finished");
-            }else {
-                model.put("done", "Sorry, try again!");
-            }
+            model.put("check", A.getNaam() + "/check");
+//            if (check) {
+//                model.put("done", "Finished");
+//            }else {
+//                model.put("done", "Sorry, try again!");
+//            }
 
 
 
