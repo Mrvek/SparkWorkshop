@@ -94,22 +94,22 @@ public class RouteManager {
             Assignment A = AssignmentHandler.getAssignment(naam);
             System.out.print(A.getNaam());
             AssignmentCheck ac = new AssignmentCheck();
-//            boolean check = ac.check(A, L);
+            boolean check = ac.check(A, L);
 
             model.put("title", A.getNaam());
             model.put("description", A.getDescription());
             model.put("check", A.getNaam() + "/check");
-//            if (check) {
-//                model.put("done", "Finished");
-//            }else {
-//                model.put("done", "Sorry, try again!");
-//            }
+            if (check) {
+                model.put("done", "Finished");
+            }else {
+                model.put("done", "Sorry, try again!");
+            }
 
 
 
 
             // The wm files are located under the resources directory
-            return new ModelAndView(model, "assignmentlist.vm");
+            return new ModelAndView(model, "assignmentdetails.vm");
         }, new VelocityTemplateEngine());
 
 

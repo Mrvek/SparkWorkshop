@@ -78,6 +78,13 @@ public class Leerling {
         doneAssignments.add(assignment);
     }
 
+    public boolean checkassigmentallreadydone(Assignment assignment) {
+        if (doneAssignments.contains(assignment)) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Leerling{" +

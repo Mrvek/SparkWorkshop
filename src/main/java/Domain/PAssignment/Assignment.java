@@ -16,4 +16,10 @@ public class Assignment {
 		return description;
 	}
 
+	@Override
+	public String toString() {
+		return "Assignment{" +
+				"naam='" + naam + '\'' +
+				"} \n";
+	}
 }
