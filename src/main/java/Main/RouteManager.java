@@ -46,6 +46,7 @@ public class RouteManager {
             model.put("name", req.params(":name"));
             model.put("ip", L.getIp());
             model.put("port", L.getPort());
+            model.put("random", L.getRandom());
 
             // The wm files are located under the resources directory
             return new ModelAndView(model, "hello.vm");
@@ -98,7 +99,7 @@ public class RouteManager {
 
             model.put("title", A.getNaam());
             model.put("description", A.getDescription());
-            model.put("check", A.getNaam() + "/check");
+            model.put("check", "");
             if (check) {
                 model.put("done", "Finished");
             }else {
